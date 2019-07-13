@@ -4,13 +4,6 @@ import "./Body.css";
 const Body = props => (
   <div className="row">
     <div className="col-lg-4">
-      <div class="card">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Account</li>
-          <li class="list-group-item">Appointments</li>
-          <li class="list-group-item">Clients</li>
-        </ul>
-      </div>
     </div>
     <div className="col-lg-8">
       <div className="card">
