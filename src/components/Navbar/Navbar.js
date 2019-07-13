@@ -3,11 +3,9 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand" href="/">
-        React Reading List
-      </a>
-    </nav>
+    <nav className="navbar navbar-light bg-light">
+    <span className="navbar-brand mb-0 h1">Jimmy'z Mobile Bike Repair</span>
+  </nav>
   );
 }
 
