@@ -3,9 +3,8 @@ import "./Body.css";
 
 const Body = props => (
   <div className="row">
-    <div className="col-lg-4">
-    </div>
-    <div className="col-lg-8">
+    <div className="col-lg-2"></div>
+    <div className="col-lg-10">
       <div className="card">
         <div className="card-header">
           Featured
