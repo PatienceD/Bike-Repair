@@ -30,9 +30,9 @@ function Navbar() {
             Clients
           </a>
           <form class="form-inline">
-            <button class="btn btn-outline-success" type="button">
+            <a className="btn btn-outline-success" type="button" target ="_blank" href="https://m.me/281457917012">
               Messages
-            </button>
+            </a>
           </form>
         </div>
       </div>
