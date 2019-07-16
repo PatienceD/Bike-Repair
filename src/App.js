@@ -13,8 +13,8 @@ import Header from "./components/Header";
               <Navbar />
               <Header />
               <Switch>
-                {/* <Route exact path="/" component={Appointments} />
-                <Route exact path="/clients" component={Clients} />
+                {/* <Route exact path="/" component={Appointments} /> */}
+                {/* <Route exact path="/clients" component={Clients} />
                 <Route exact path="/account" component={Account} />
                 <Route component={NoMatch} /> */}
                </Switch>
