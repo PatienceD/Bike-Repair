@@ -3,7 +3,7 @@ import "./Header.css";
 const Header = props => (
     <div className="row">
         <div className="header">
-            Hello World
+            {/* Welcome {FirstName} */}
     </div>
     </div>
 );

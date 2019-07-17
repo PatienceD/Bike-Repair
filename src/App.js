@@ -1,10 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React, { Component } from "react";
-import Body from "./components/Body";
+import React from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import Calendly from "./pages/Appointments";
+import NoMatch from "./pages/NoMatch";
 
     function App() {
         return (
@@ -13,10 +13,11 @@ import Header from "./components/Header";
               <Navbar />
               <Header />
               <Switch>
-                {/* <Route exact path="/" component={Appointments} />
-                <Route exact path="/clients" component={Clients} />
-                <Route exact path="/account" component={Account} />
-                <Route component={NoMatch} /> */}
+                <Route exact path="/" component={Calendly} />
+                <Route exact path="/appointments" component={Calendly} />
+                {/* <Route exact path="/clients" component={Clients} />
+                <Route exact path="/account" component={Account} /> */}
+                <Route component={NoMatch} />
                </Switch>
             </Router>
           </div>
