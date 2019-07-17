@@ -1,30 +1,29 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React, { Component } from "react";
-import Body from "./components/Body";
+import React from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import Clients from "./components/Clients";
 
+import Calendly from "./pages/Appointments";
+import NoMatch from "./pages/NoMatch";
 
-function App() {
-  return (
-    <div className="Header">
-      <Router>
-        <Navbar />
-        <Header />
-        <Clients />
-        {/* <Body /> */}
-        <Switch>
-          {/* <Route exact path="/" component={Appointments} />
-                <Route exact path="/clients" component={Clients} />
-                <Route exact path="/account" component={Account} />
-                <Route component={NoMatch} /> */}
-        </Switch>
-      </Router>
-    </div>
-  );
-}
+    function App() {
+        return (
+        <div className ="Header">
+            <Router>
+              <Navbar />
+              <Header />
+              <Switch>
+                <Route exact path="/" component={Calendly} />
+                <Route exact path="/appointments" component={Calendly} />
+                {/* <Route exact path="/clients" component={Clients} />
+                <Route exact path="/account" component={Account} /> */}
+                <Route component={NoMatch} />
+               </Switch>
+            </Router>
+          </div>
+        );
+      }
+      
+      export default App;
 
-export default App;
