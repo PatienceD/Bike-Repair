@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+
 import Calendly from "./pages/Appointments";
 import NoMatch from "./pages/NoMatch";
 
@@ -25,3 +26,4 @@ import NoMatch from "./pages/NoMatch";
       }
       
       export default App;
+
