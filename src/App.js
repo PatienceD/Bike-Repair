@@ -5,7 +5,7 @@ import React, { Component } from "react";
 import Body from "./components/Body";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import Clients from "./components/Clients";
+import Clients from "./pages/Clients";
 
 
 function App() {
@@ -14,12 +14,11 @@ function App() {
       <Router>
         <Navbar />
         <Header />
-        <Clients />
         {/* <Body /> */}
         <Switch>
-          {/* <Route exact path="/" component={Appointments} />
+          {/* <Route exact path="/" component={Appointments} /> */}
                 <Route exact path="/clients" component={Clients} />
-                <Route exact path="/account" component={Account} />
+                {/* <Route exact path="/account" component={Account} />
                 <Route component={NoMatch} /> */}
         </Switch>
       </Router>
