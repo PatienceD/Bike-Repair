@@ -14,6 +14,7 @@ import NoMatch from "./pages/NoMatch";
               <Header />
               <Switch>
                 <Route exact path="/" component={Calendly} />
+                <Route exact path="/appointments" component={Calendly} />
                 {/* <Route exact path="/clients" component={Clients} />
                 <Route exact path="/account" component={Account} /> */}
                 <Route component={NoMatch} />

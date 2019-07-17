@@ -20,13 +20,13 @@ function Navbar() {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-          <a className="nav-item nav-link active" href="#">
+          <a className="nav-item nav-link active" href="/appointments">
             Appointments<span className="sr-only">(current)</span>
           </a>
-          <a className="nav-item nav-link" href="#">
+          <a className="nav-item nav-link" href="/accounts">
             Account
           </a>
-          <a className="nav-item nav-link" href="#">
+          <a className="nav-item nav-link" href="/clients">
             Clients
           </a>
           <form class="form-inline">
