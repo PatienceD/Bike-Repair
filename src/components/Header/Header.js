@@ -1,13 +1,13 @@
 import React from "react";
 import "./Header.css";
-const Header = props => (
-    <div className="row">
+
+function Header() {
+    return (
         <div className="header">
+            Welcome User!
+        </div>
+    )
+}
 
-            {/* Welcome {FirstName} */}
-    </div>
-
-    </div>
-);
 
 export default Header;

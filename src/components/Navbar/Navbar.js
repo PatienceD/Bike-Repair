@@ -23,7 +23,7 @@ function Navbar() {
           <a className="nav-item nav-link active" href="/appointments">
             Appointments<span className="sr-only">(current)</span>
           </a>
-          <a className="nav-item nav-link" href="/accounts">
+          <a className="nav-item nav-link" href="/account">
             Account
           </a>
           <a className="nav-item nav-link" href="/clients">
