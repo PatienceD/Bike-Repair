@@ -1,43 +1,45 @@
-import React from "react";
-import "./Navbar.css";
+import React, { Component } from "react";
+import {
+  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
+  MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
+} from "mdbreact";
 
-function Navbar() {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-        Jimmy'z Mobile Bike Repair
-      </a>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          <a className="nav-item nav-link active" href="/appointments">
-            Appointments<span className="sr-only">(current)</span>
-          </a>
-          <a className="nav-item nav-link" href="/account">
-            Account
-          </a>
-          <a className="nav-item nav-link" href="/clients">
-            Clients
-          </a>
-          <form class="form-inline">
-            <a className="btn btn-outline-success" type="button" target ="_blank" href="https://m.me/281457917012">
-              Messages
-            </a>
-          </form>
-        </div>
-      </div>
-    </nav>
-  );
+class NavbarPage extends Component {
+  state = {
+    isOpen: false
+  };
+
+  toggleCollapse = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  }
+
+  render() {
+    return (
+      <MDBNavbar nav nav-tabs color="primary-color" dark expand="md">
+        <MDBNavbarBrand>
+          <strong className="white-text">Jimmy'z Mobile Bike Repair</strong>
+        </MDBNavbarBrand>
+        <MDBNavbarToggler onClick={this.toggleCollapse} />
+        <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+          <MDBNavbarNav right>
+            <MDBNavItem active>
+              <MDBNavLink to="/Appointments">Appointments</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/Account">Account Info</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/Clients">Client Search</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink target="_blank" href="https://m.me/281457917012">Messages</MDBNavLink>
+            </MDBNavItem>
+            
+          </MDBNavbarNav>
+        </MDBCollapse>
+      </MDBNavbar>
+    );
+  }
 }
 
-export default Navbar;
+export default NavbarPage;
