@@ -1,3 +1,6 @@
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 import "./App.css";
 // import "./components/Header/Header.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -8,24 +11,26 @@ import Clients from "./pages/Clients";
 import Calendly from "./pages/Appointments";
 import Account from "./pages/Account";
 import NoMatch from "./pages/NoMatch";
+import Footer from "./components/Footer";
 
-    function App() {
-        return (
-        <div className ="Header">
-            <Router>
-              <Navbar />
-              <Header />
-              <Switch>
-                <Route exact path="/" component={Calendly} />
-                <Route exact path="/appointments" component={Calendly} />
-                 <Route exact path="/clients" component={Clients} />
-                <Route exact path="/account" component={Account} />
-                <Route component={NoMatch} /> 
-               </Switch>
-            </Router>
-          </div>
-        );
-      }
-      
-      export default App;
+function App() {
+  return (
+    <div className="Header">
+      <Router>
+        <Navbar />
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Calendly} />
+          <Route exact path="/appointments" component={Calendly} />
+          <Route exact path="/clients" component={Clients} />
+          <Route exact path="/account" component={Account} />
+          <Route component={NoMatch} />
+        </Switch>
+        <Footer />
+      </Router>
+    </div>
+  );
+}
+
+export default App;
 

@@ -4,7 +4,7 @@ import "./Header.css";
 function Header() {
     return (
         <div className="header">
-            Welcome User!
+            <h2>Welcome User!</h2>
         </div>
     )
 }
