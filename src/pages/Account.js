@@ -17,7 +17,71 @@ function Account() {
                                     <p className="card-text">Phone Number: (555)555-555</p>
                                     <p className="card-text">Email: firstname.lastname@gmail.com</p>
                                     <a href="#" className="btn btn-blue">Sign in with Facebook</a>
-                                    {/* run the modal to sign in with facebook, then grab the username (first and last name), and email */}
+
+                                    {/* <!-- Button trigger modal --> */}
+                                    <button type="button" class="btn btn-blue" data-toggle="modal" data-target="#AccountEditModal">
+                                        Edit Account Info
+                                    </button>
+                                    {/* Edit info grabbed from facebook login */}
+
+                                    {/* <!-- Modal --> */}
+                                    <div class="modal fade" id="AccountEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-body">
+                                                {/* <!--Modal: Contact form--> */}
+                                                <div class="modal-dialog cascading-modal" role="document">
+
+                                                    {/* <!--Content--> */}
+                                                    <div class="modal-content">
+
+                                                        {/* <!--Header--> */}
+                                                        <div class="modal-header info-color white-text">
+                                                            <h4 class="title">
+                                                                <i class="fa fa-pencil-alt"></i> Edit Account Information</h4>
+                                                            <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                        </div>
+                                                        {/* <!--Body--> */}
+                                                        <div class="modal-body">
+
+                                                            {/* <!-- Default input name --> */}
+                                                            <label for="defaultFormNameModalEx">New User Name</label>
+                                                            <input type="text" id="defaultFormNameModalEx" class="form-control form-control-sm" placeholder="First and Last Name"></input>
+
+                                                            <br></br>
+
+                                                            {/* <!-- Default input email --> */}
+                                                            <label for="defaultFormSubjectModalEx">New Email</label>
+                                                            <input type="text" id="defaultFormSubjectModalEx" class="form-control form-control-sm" placeholder="john.smith@gmail.com"></input>
+
+                                                            <br></br>
+
+                                                            {/* <!-- Default input subject --> */}
+                                                            <label for="defaultFormSubjectModalEx">New Phone Number</label>
+                                                            <input type="text" id="defaultFormSubjectModalEx" class="form-control form-control-sm" placeholder="(555)555-555"></input>
+
+                                                            <br></br>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="validatedCustomFile" required></input>
+                                                                <label class="custom-file-label" for="validatedCustomFile">Choose profile picture...</label>
+                                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        {/* END MODAL */}
+                                        {/* add a modal once they want to add a bike */}
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -41,14 +105,14 @@ function Account() {
                                     <p className="card-text">Additional Notes:</p>
 
                                     {/* <!-- Button trigger modal --> */}
-                                    <button type="button" class="btn btn-blue" data-toggle="modal" data-target="#basicExampleModal">
+                                    <button type="button" class="btn btn-blue" data-toggle="modal" data-target="#AddaBikeModal">
                                         Add your Bike Information
                                     </button>
 
 
 
                                     {/* <!-- Modal --> */}
-                                    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                    <div class="modal fade" id="AddaBikeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                                         aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-body">
@@ -83,13 +147,13 @@ function Account() {
 
                                                             {/* <!-- Default input subject --> */}
                                                             <label for="defaultFormSubjectModalEx">Adult or Child Bike?</label>
-                                                            <input type="text" id="defaultFormSubjectModalEx" class="form-control form-control-sm"placeholder="Adult or Child"></input>
+                                                            <input type="text" id="defaultFormSubjectModalEx" class="form-control form-control-sm" placeholder="Adult or Child"></input>
 
                                                             <br></br>
 
                                                             {/* <!-- Default textarea message --> */}
                                                             <label for="defaultFormMessageModalEx">Any other info we need to know?</label>
-                                                            <textarea type="text" id="defaultFormMessageModalEx" class="md-textarea form-control"placeholder="Let us know"></textarea>
+                                                            <textarea type="text" id="defaultFormMessageModalEx" class="md-textarea form-control" placeholder="Let us know"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
