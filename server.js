@@ -2,7 +2,7 @@ const express = require("express");
 const db = require("./models");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 8080;
 
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
@@ -21,8 +21,3 @@ db.sequelize.sync().then(function() {
       console.log("App listening on PORT " + PORT);
     });
   });
-
-// Start the API server
-app.listen(PORT, () =>
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
-);
