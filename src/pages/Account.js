@@ -63,9 +63,10 @@ function Account() {
                                                             <input type="text" id="defaultFormSubjectModalEx" class="form-control form-control-sm" placeholder="(555)555-555"></input>
 
                                                             <br></br>
+                                                            <label for="defaultFormSubjectModalEx">Change Your Photo</label>
                                                             <div class="custom-file">
                                                                 <input type="file" class="custom-file-input" id="validatedCustomFile" required></input>
-                                                                <label class="custom-file-label" for="validatedCustomFile">Choose profile picture...</label>
+                                                                <label class="custom-file-label" for="validatedCustomFile">Choose picture...</label>
                                                                 <div class="invalid-feedback">Example invalid custom file feedback</div>
                                                             </div>
                                                         </div>
@@ -125,7 +126,7 @@ function Account() {
                                                         {/* <!--Header--> */}
                                                         <div class="modal-header info-color white-text">
                                                             <h4 class="title">
-                                                                <i class="fa fa-pencil-alt"></i> Tell us about your bike</h4>
+                                                                <i class="fas fa-bicycle" style={{ fontSize: '1.5em' }}></i> Tell us about your bike</h4>
                                                             <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">×</span>
                                                             </button>
@@ -134,20 +135,29 @@ function Account() {
                                                         <div class="modal-body">
 
                                                             {/* <!-- Default input name --> */}
-                                                            <label for="defaultFormNameModalEx">Mountain Bike or Road Bike?</label>
-                                                            <input type="text" id="defaultFormNameModalEx" class="form-control form-control-sm" placeholder="Mountain or Road"></input>
-
-                                                            <br></br>
+                                                            <div class="form-group">
+                                                                <label for="exampleFormControlSelect1">Mountain Bike or Road Bike?</label>
+                                                                <select class="form-control" id="m-or-r">
+                                                                    <option hidden>Select One</option>
+                                                                    <option>Mountain Bike</option>
+                                                                    <option>Road Bike</option>
+                                                                </select>
+                                                            </div>
 
                                                             {/* <!-- Default input email --> */}
                                                             <label for="defaultFormSubjectModalEx">Last Date of Work:</label>
-                                                            <input type="date" id="defaultFormSubjectModalEx" class="form-control form-control-sm"></input>
+                                                            <input type="date" id="last-work" class="form-control form-control-sm"></input>
 
                                                             <br></br>
 
                                                             {/* <!-- Default input subject --> */}
-                                                            <label for="defaultFormSubjectModalEx">Adult or Child Bike?</label>
-                                                            <input type="text" id="defaultFormSubjectModalEx" class="form-control form-control-sm" placeholder="Adult or Child"></input>
+                                                            <label for="defaultFormSubjectModalEx">Is it a Children's bike?</label>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="" id="ChildorAdult"></input>
+                                                                <label class="form-check-label" for="defaultCheck1">
+                                                                    Yes
+                                                                </label>
+                                                            </div>
 
                                                             <br></br>
 
