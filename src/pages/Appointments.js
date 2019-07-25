@@ -1,6 +1,5 @@
 import React from "react";
 
-
 class Calendly extends React.Component {
   componentDidMount() {
     const head = document.querySelector('head');
