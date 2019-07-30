@@ -2,6 +2,8 @@ const express = require("express");
 const db = require("./models");
 const routes = require("./routes");
 const app = express();
+var mysql = require("mysql");
+var connection;
 const PORT = process.env.PORT || 8080;
 
 // Configure body parsing for AJAX requests
@@ -12,6 +14,16 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+if(process.env.JAWS_URL){
+  connection = mysql.createConnection(process.env.JAWS_URL);
+} else {
+connection = mysql.createConnection({
+  host:'localhost',
+  user: 'root',
+  password: null,
+  database:'bike-repair'
+});
+};
 // Add routes, both API and view
 app.use(routes);
 
