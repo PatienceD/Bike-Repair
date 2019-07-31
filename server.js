@@ -10,9 +10,9 @@ const PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+// }
 
 if(process.env.JAWS_URL){
   connection = mysql.createConnection(process.env.JAWS_URL);
@@ -23,6 +23,7 @@ connection = mysql.createConnection({
   password: null,
   database:'bike-repair'
 });
+
 };
 // Add routes, both API and view
 app.use(routes);
