@@ -1,0 +1,25 @@
+{
+    "development": {
+    "username": "root",
+    "password": "Westpoint19!",
+    "database": "bike-repair",
+    "host": "localhost",
+    "dialect": "mysql"
+    },
+    "test": {
+    "username": "root",
+    "password": null,
+    "database": "testdb",
+    "host": "localhost",
+    "dialect": "mysql",
+    "logging": false
+    },
+    "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "username": "e2q2kdri50chdka3",
+    "password": "il8wax5odbvhwqf6",
+    "database": "ddcm0abovj0trs90",
+    "host": "q57yawiwmnaw13d2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+    }
+    }
