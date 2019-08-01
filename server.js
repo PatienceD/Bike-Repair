@@ -4,7 +4,7 @@ const routes = require("./routes");
 const app = express();
 var mysql = require("mysql");
 var connection;
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3306;
 
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
