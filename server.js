@@ -3,24 +3,16 @@ const db = require("./models");
 const routes = require("./routes");
 const app = express();
 var mysql = require("mysql");
-var connection;
 const PORT = process.env.PORT || 8080;
 
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets
-if (process.env.NODE_ENV === "production") {
-  connection = mysql.createConnection(process.env.JAWS_URL);
-} else {
-connection = mysql.createConnection({
-  host:'localhost',
-  user: 'root',
-  password: null,
-  database:'bike-repair'
-});
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+// }
 
-};
 // Add routes, both API and view
 app.use(routes);
 
