@@ -10,7 +10,7 @@ export default {
     return axios.get("/api/clients/" + id);
   },
   // Saves an book to the database
-  createUser: function() {
-    return axios.post("/api/clients", );
+  createUser: function(clientInfo) {
+    return axios.post("/api/clients", clientInfo);
   }
 };
