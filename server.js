@@ -1,14 +1,9 @@
 const express = require("express");
 const db = require("./models");
-const routes = require("./routes");
+const routes = require("./controllers/bike-controller.js");
 const app = express();
 var mysql = require("mysql");
-<<<<<<< HEAD
-var connection;
-const PORT = process.env.PORT || 3306;
-=======
 const PORT = process.env.PORT || 8080;
->>>>>>> 86d3dd77414b672f713cb7e5a65dc8739e63ce0c
 
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
