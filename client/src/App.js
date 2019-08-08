@@ -15,20 +15,23 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="wrapper">
-      <Router>
-        <Navbar />
-        <Header />
-        <Switch>
-          <Route exact path="/" component={Calendly} />
-          <Route exact path="/appointments" component={Calendly} />
-          <Route exact path="/clients" component={Clients} />
-          <Route exact path="/account" component={Account} />
-          <Route component={NoMatch} />
-        </Switch>
-        <Footer />
-      </Router>
+    <div>
+      <div className="wrapper">
+        <Router>
+          <Navbar />
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Calendly} />
+            <Route exact path="/appointments" component={Calendly} />
+            <Route exact path="/clients" component={Clients} />
+            <Route exact path="/account" component={Account} />
+            <Route component={NoMatch} />
+          </Switch>
+        </Router>
+      </div>
+      <Footer />
     </div>
+
   );
 }
 

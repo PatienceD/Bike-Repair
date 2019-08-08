@@ -5,7 +5,7 @@ import "./Footer.css";
 
 function Footer() {
     return (
-        <MDBFooter color = "primary-color" className = "font-small pt-4 mt-4">
+        <MDBFooter color="primary-color" className="font-small pt-4 mt-4">
             <MDBContainer fluid className="text-center text-md-left">
                 <MDBRow>
                     <MDBCol md="6">
@@ -37,10 +37,10 @@ function Footer() {
                         <hr></hr>
                         <ul>
                             <li className="list-unstyled">
-                                <a href="https://www.facebook.com/Jimmyzmobile/"><i class="fab fa-facebook-square"></i> Facebook</a>
+                                <a href="https://www.facebook.com/Jimmyzmobile/"><i className="fab fa-facebook-square"></i> Facebook</a>
                             </li>
                             <li className="list-unstyled">
-                                <a href="https://www.instagram.com/jimmyzmobile/"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="https://www.instagram.com/jimmyzmobile/"><i className="fab fa-instagram"></i> Instagram</a>
                             </li>
                         </ul>
                     </MDBCol>
