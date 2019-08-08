@@ -15,7 +15,7 @@ app.use(routes);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-
+}
 //Connect to SQL
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
