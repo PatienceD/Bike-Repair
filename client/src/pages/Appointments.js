@@ -28,7 +28,7 @@ class Calendly extends React.Component {
           <div
             className="calendly-inline-widget"
             data-url="https://calendly.com/charlotterice2010/example"
-            style={{ minWidth: '320px', height: '820px' }} />
+            style={{ minWidth: '320px', height: '821px' }} />
         </div>
       </div>
     );

@@ -6,11 +6,11 @@ export default {
     return axios.get("/api/clients");
   },
   // Deletes the saved book with the given id
-  getOne: function(id) {
-    return axios.get("/api/clients/" + id);
+  getOne: function(name) {
+    return axios.get("/api/clients/" + name);
   },
   // Saves an book to the database
-  createUser: function(clientInfo) {
-    return axios.post("/api/clients", clientInfo);
+  createUser: function(obj) {
+    return axios.post("/api/clients", obj);
   }
 };
