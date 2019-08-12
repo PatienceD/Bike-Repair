@@ -1,6 +1,6 @@
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
 import "./App.css";
 // import "./components/Header/Header.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -23,7 +23,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Calendly} />
             <Route exact path="/appointments" component={Calendly} />
-            <Route exact path="/clients" component={Clients} />
+            <Route exact path="/Clients" component={Clients} />
             <Route exact path="/account" component={Account} />
             <Route component={NoMatch} />
           </Switch>
@@ -31,9 +31,7 @@ function App() {
       </div>
       <Footer />
     </div>
-
   );
 }
 
 export default App;
-
