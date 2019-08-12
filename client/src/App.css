@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  /* position: relative; */
 }
 
 html, body {
@@ -10,3 +9,11 @@ html, body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* .modal-open .wrapper{
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+} */

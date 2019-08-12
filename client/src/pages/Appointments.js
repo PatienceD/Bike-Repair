@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "../Modal";
 
 class Calendly extends React.Component {
   componentDidMount() {
@@ -6,11 +7,17 @@ class Calendly extends React.Component {
     const script = document.createElement('script');
     script.setAttribute('src', 'https://assets.calendly.com/assets/external/widget.js');
     head.appendChild(script);
+
   }
 
   render() {
     return (
+
       <div>
+        {/* GOOGLE MODAL LOGIN */}
+        <Modal />
+        {/* GOOGLE MODAL LOGIN */}
+
         <div className="container">
           <h4>See your Appointment Information</h4>
           <div className="card">
