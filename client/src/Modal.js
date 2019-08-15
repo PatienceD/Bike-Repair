@@ -10,6 +10,16 @@ class Modal extends React.Component {
         });
     }
 
+    onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
+
+
+
     render() {
         return (
             <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -22,15 +32,21 @@ class Modal extends React.Component {
                             </button>
                         </div>
                         <div class="modal-body">
-                            <div className="container">
+                            <div className="container" style={{ margin: '15px' }}>
                                 <div className="row">
                                     <h5>To make sure you get the most out of Jimmy's app, be sure to sign in with Google!</h5>
+                                </div><br></br>
+                                <div className="row">
+                                    <div className="col-md-4"></div>
+                                    <div className="col-md-4">
+                                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                                    </div>
+                                    <div className="col-md-4"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>

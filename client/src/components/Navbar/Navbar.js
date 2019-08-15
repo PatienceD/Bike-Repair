@@ -16,8 +16,6 @@ class NavbarPage extends Component {
 
   render() {
     return (
-
-      // < !--Navbar -- >
       <nav className="mb-1 navbar navbar-expand-lg navbar-dark blue lighten-1">
         <img src={Logo}
           alt="avatar image" height="80"></img>
