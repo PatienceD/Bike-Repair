@@ -26,17 +26,14 @@
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
     "nodemon": "^1.19.1",
-<<<<<<< HEAD
     "passport": "^0.4.0",
     "passport-google-oauth2": "^0.2.0",
     "passport-oauth2": "^1.5.0",
     "proptype": "^1.0.0",
     "react-sticky-footer": "0.1.0-rc3",
-    "sequelize": "^5.10.2"
-=======
+    "sequelize": "^5.10.2",
     "path": "^0.12.7",
     "sequelize": "^5.13.1"
->>>>>>> 8e22deef56a9ae5370b852c22b0b16d5c28d6bde
   },
   "repository": {
     "type": "git",

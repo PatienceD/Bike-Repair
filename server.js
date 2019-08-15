@@ -4,7 +4,6 @@ const routes = require("./controllers/bike-controller.js");
 const app = express();
 var mysql = require("mysql");
 const PORT = process.env.PORT || 3001;
-<<<<<<< HEAD
 var server = require('http').createServer(app);
 var passport = require('passport');
 var util = require( 'util' )
@@ -106,9 +105,7 @@ function ensureAuthenticated(req, res, next) {
 
 
 
-=======
 const path = require("path");
->>>>>>> 8e22deef56a9ae5370b852c22b0b16d5c28d6bde
 
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
