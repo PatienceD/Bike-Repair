@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import {
-  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
-  MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
-} from "mdbreact";
+// import {
+//   MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
+//   MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
+// } from "mdbreact";
 import Logo from "./pics/Jimmyz_new_logo_outlines.png";
 
 class NavbarPage extends Component {
@@ -12,6 +12,18 @@ class NavbarPage extends Component {
 
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
+  }
+
+  signOut() {
+    const auth2 = window.gapi.auth2.getAuthInstance()
+    if (auth2 != null) {
+      auth2.signOut().then(
+        auth2.disconnect().then(this.props.onLogoutSuccess)
+      )
+    }
+    else {
+      this.props.onLogoutFailure()
+    }
   }
 
   render() {
@@ -25,13 +37,22 @@ class NavbarPage extends Component {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent-555">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i className="fas fa-user"></i> Profile </a>
               <div className="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
                 <a className="dropdown-item" href="/Account">My account</a>
-                <a className="dropdown-item" href="#">Log out</a>
+              </div>
+            </li> */}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                aria-labelledby="navbarDropdownMenuLink-333">
+                <a className="nav-link" onclick="signOut();">Sign out</a>
               </div>
             </li>
             <li className="nav-item active">

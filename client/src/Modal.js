@@ -10,43 +10,79 @@ class Modal extends React.Component {
         });
     }
 
-    onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    }
-
-
-
     render() {
         return (
-            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title" id="exampleModalCenterTitle">Welcome to Jimmy'z Mobile Bike Repair!</h2>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
+            <div>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true" >
+                    <div class="modal-dialog" role="document">
                         <div class="modal-body">
-                            <div className="container" style={{ margin: '15px' }}>
-                                <div className="row">
-                                    <h5>To make sure you get the most out of Jimmy's app, be sure to sign in with Google!</h5>
-                                </div><br></br>
-                                <div className="row">
-                                    <div className="col-md-4"></div>
-                                    <div className="col-md-4">
-                                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                            {/* <!--Modal: Contact form--> */}
+                            <div class="modal-dialog cascading-modal" role="document">
+
+                                {/* <!--Content--> */}
+                                <div class="modal-content">
+
+                                    {/* <!--Header--> */}
+                                    <div class="modal-header info-color white-text">
+                                        <h4 class="title">
+                                            <i class="fa fa-pencil-alt"></i> Sign in</h4>
+                                        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
                                     </div>
-                                    <div className="col-md-4"></div>
+                                    {/* <!--Body--> */}
+                                    <div class="modal-body">
+
+                                        <form class="text-center border border-light p-5" action="#!">
+
+                                            <p class="h4 mb-4">Sign in</p>
+
+                                            <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+                                                <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+
+                                                    <div class="d-flex justify-content-around">
+                                                        <div>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember"></input>
+                                                                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <a href="">Forgot password?</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+                                                    <p>Not a member?
+                                                    <a href="">Register</a>
+                                                    </p>
+
+                                                    <p>or sign in with:</p>
+
+                                                    <a type="button" class="light-blue-text mx-2">
+                                                        <i class="fab fa-facebook-f"></i>
+                                                    </a>
+                                                    <a type="button" class="light-blue-text mx-2">
+                                                        <i class="fab fa-twitter"></i>
+                                                    </a>
+                                                    <a type="button" class="light-blue-text mx-2">
+                                                        <i class="fab fa-linkedin-in"></i>
+                                                    </a>
+                                                    <a type="button" class="light-blue-text mx-2">
+                                                        <i class="fab fa-github"></i>
+                                                    </a>
+                                                </input>
+                                            </input>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
