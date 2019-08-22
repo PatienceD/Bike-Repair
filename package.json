@@ -26,9 +26,8 @@
     "nodemon": "^1.19.1",
     "proptype": "^1.0.0",
     "react-sticky-footer": "0.1.0-rc3",
-    "sequelize": "^5.10.2",
-    "path": "^0.12.7",
-    "sequelize": "^5.13.1"
+    "sequelize": "^5.13.1",
+    "path": "^0.12.7"
   },
   "repository": {
     "type": "git",
