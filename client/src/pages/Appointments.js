@@ -27,7 +27,7 @@ class Calendly extends React.Component {
               <p className="card-text">Where: Desired Location</p>
               <p className="card-text">When: 08/20/2019 10:00am</p>
               {/* <button href="#" className="card-link">Reschedule</button> */}
-              <a className="btn btn-blue" type="button" target="_blank" href="https://m.me/281457917012">Ask Jimmy a Question</a>
+              <a className="btn btn-blue" type="button" target="_blank" rel="noopener noreferrer" href="https://m.me/281457917012">Ask Jimmy a Question</a>
             </div>
           </div>
         </div>
