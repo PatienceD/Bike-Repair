@@ -31,8 +31,13 @@ router.get("/api/clients/:name", function(req, res) {
   });
 });
 
-// router.use(function(req, res) {
-//   res.sendFile(path.join(__dirname, "/clients/build/index.html"));
-// });
+router.post('/new', function(req, res) {
+  db.sequelize.query('INSERT INTO User (firstName,lastName,phoneNumber,email,password) VALUES (');
+  
+  , function (error, results) {
+      if(error) throw error;
+      res.send(JSON.stringify(results));
+  });
+});
 
 module.exports = router;
