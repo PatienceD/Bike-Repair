@@ -31,13 +31,9 @@ router.get("/api/clients/:name", function(req, res) {
   });
 });
 
+//Charlotte is working on this//
 router.post('/new', function(req, res) {
-  db.sequelize.query('INSERT INTO User (firstName,lastName,phoneNumber,email,password) VALUES (');
-  
-  , function (error, results) {
-      if(error) throw error;
-      res.send(JSON.stringify(results));
-  });
+  db.sequelize.query('INSERT INTO User (firstName,lastName,phoneNumber,email,password) VALUES (firstName,lastName,phoneNumber,email,password')
 });
 
 module.exports = router;
