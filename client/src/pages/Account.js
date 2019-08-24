@@ -37,12 +37,13 @@ class Account extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-12">
+                    <div className="col-lg-2"></div>
+                    <div className="col-lg-8">
                         <div className="card">
                             <div className="card-body">
                                 <div className="row">
                                     <div className="col-md-3">
-                                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Image"></img>
+                                        <img src="https://png.pngtree.com/svg/20160105/person_1058294.png" className="card-img-top" alt="Image"></img>
                                     </div>
                                     <div className="col-md-9">
                                         <h5 className="card-title">User First and Last Name</h5>
@@ -50,27 +51,27 @@ class Account extends Component {
                                         <p className="card-text">Email: firstname.lastname@gmail.com</p>
 
                                         {/* <!-- Button trigger modal --> */}
-                                        <button type="button" class="btn btn-blue" data-toggle="modal" data-target="#AccountEditModal">
+                                        <button type="button" className="btn btn-blue" data-toggle="modal" data-target="#AccountEditModal">
                                             Edit Account Info
                                         </button>
                                         {/* Edit info grabbed from facebook login */}
 
                                         {/* <!-- Modal --> */}
-                                        <div class="modal fade" id="AccountEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                        <div className="modal fade" id="AccountEditModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                                             aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-body">
+                                            <div className="modal-dialog" role="document">
+                                                <div className="modal-body">
                                                     {/* <!--Modal: Contact form--> */}
-                                                    <div class="modal-dialog cascading-modal" role="document">
+                                                    <div className="modal-dialog cascading-modal" role="document">
 
                                                         {/* <!--Content--> */}
-                                                        <div class="modal-content">
+                                                        <div className="modal-content">
 
                                                             {/* <!--Header--> */}
-                                                            <div class="modal-header info-color white-text">
-                                                                <h4 class="title">
-                                                                    <i class="fa fa-pencil-alt"></i> Edit Account Information</h4>
-                                                                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                                                            <div className="modal-header info-color white-text">
+                                                                <h4 className="title">
+                                                                    <i className="fa fa-pencil-alt"></i> Edit Account Information</h4>
+                                                                <button type="button" className="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
                                                                     <span aria-hidden="true">×</span>
                                                                 </button>
                                                             </div>
@@ -122,8 +123,8 @@ class Account extends Component {
                                                             </Container>
                                                         </div>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <div className="modal-footer">
+                                                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -137,12 +138,13 @@ class Account extends Component {
                 </div><br></br>
 
                 <div className="row">
-                    <div className="col-lg-12">
+                <div className="col-lg-2"></div>
+                    <div className="col-lg-8">
                         <div className="card">
                             <div className="card-body">
                                 <div className="row">
                                     <div className="col-md-3">
-                                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Image"></img>
+                                        <img src="http://media.pixcove.com/C/7/6/Stickman-Matchstick-Man-Stick-Figure-Free-Image-Fi-6666.jpg" className="card-img-top" alt="Image"></img>
                                     </div>
                                     <div className="col-md-9">
                                         <h5 className="card-title">Bike Information</h5>
@@ -152,33 +154,33 @@ class Account extends Component {
                                         <p className="card-text">Additional Notes:</p>
 
                                         {/* <!-- Button trigger modal --> */}
-                                        <button type="button" class="btn btn-blue" data-toggle="modal" data-target="#AddaBikeModal">
+                                        <button type="button" className="btn btn-blue" data-toggle="modal" data-target="#AddaBikeModal">
                                             Add your Bike Information
                                         </button>
 
 
 
                                         {/* <!-- Modal --> */}
-                                        <div class="modal fade" id="AddaBikeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                        <div className="modal fade" id="AddaBikeModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                                             aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-body">
+                                            <div className="modal-dialog" role="document">
+                                                <div className="modal-body">
                                                     {/* <!--Modal: Contact form--> */}
-                                                    <div class="modal-dialog cascading-modal" role="document">
+                                                    <div className="modal-dialog cascading-modal" role="document">
 
                                                         {/* <!--Content--> */}
-                                                        <div class="modal-content">
+                                                        <div className="modal-content">
 
                                                             {/* <!--Header--> */}
-                                                            <div class="modal-header info-color white-text">
-                                                                <h4 class="title">
-                                                                    <i class="fas fa-bicycle" style={{ fontSize: '1.5em' }}></i> Tell us about your bike</h4>
-                                                                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                                                            <div className="modal-header info-color white-text">
+                                                                <h4 className="title">
+                                                                    <i className="fas fa-bicycle" style={{ fontSize: '1.5em' }}></i> Tell us about your bike</h4>
+                                                                <button type="button" className="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
                                                                     <span aria-hidden="true">×</span>
                                                                 </button>
                                                             </div>
                                                             {/* <!--Body--> */}
-                                                            <div class="modal-body" style={{padding: '.5px'}}>
+                                                            <div className="modal-body" style={{ padding: '.5px' }}>
                                                                 <Container className="p-5">
                                                                     <Form onSubmit={this.onFormClick}>
                                                                         <FormGroup>
@@ -227,8 +229,8 @@ class Account extends Component {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <div className="modal-footer">
+                                                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
                                             </div>
