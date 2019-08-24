@@ -1,8 +1,28 @@
 import React from 'react';
 import $ from 'jquery';
 import 'bootstrap';
+import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
+
 
 class Modal extends React.Component {
+
+    constructor() {
+        super();
+        this.onFormSubmit = this.onFormSubmit.bind(this);
+        this.state = {
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            phoneNumber: ''
+        };
+    }
+
+    onFormSubmit(event) {
+        event.preventDefault();
+        alert(JSON.stringify(this.state, null, '  '));
+        console.log(this.state);
+    }
 
     componentDidMount = () => {
         $(document).ready(function () {
@@ -10,47 +30,88 @@ class Modal extends React.Component {
         });
     }
 
-    onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    }
-
-
-
     render() {
         return (
-            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title" id="exampleModalCenterTitle">Welcome to Jimmy'z Mobile Bike Repair!</h2>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div className="container" style={{ margin: '15px' }}>
-                                <div className="row">
-                                    <h5>To make sure you get the most out of Jimmy's app, be sure to sign in with Google!</h5>
-                                </div><br></br>
-                                <div className="row">
-                                    <div className="col-md-4"></div>
-                                    <div className="col-md-4">
-                                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                                    </div>
-                                    <div className="col-md-4"></div>
+            <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true" >
+                <div className="modal-dialog" role="document">
+                    <div className="modal-body">
+                        {/* <!--Modal: Contact form--> */}
+                        <div className="modal-dialog cascading-modal" role="document">
+                            {/* <!--Content--> */}
+                            <div className="modal-content">
+                                <div className="modal-header info-color white-text">
+                                    <h4 className="title">
+                                        <i className="fa fa-pencil-alt"></i> Sign Up with us</h4>
+                                    <button type="button" className="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
                                 </div>
+                                <Container className="p-5">
+                                    <Form onSubmit={this.onFormSubmit}>
+                                        <FormGroup>
+                                            <Label>First Name:</Label>
+                                            <Input
+                                                type="text"
+                                                name="text"
+                                                placeholder="First Name"
+                                                value={this.state.firstName}
+                                                onChange={e => this.setState({ firstName: e.target.value })}
+                                            />
+                                        </FormGroup>
+                                        <FormGroup>
+                                            <Label>Last Name:</Label>
+                                            <Input
+                                                type="text"
+                                                name="text"
+                                                placeholder="Last Name"
+                                                value={this.state.lastName}
+                                                onChange={e => this.setState({ lastName: e.target.value })}
+                                            />
+                                        </FormGroup>
+                                        <FormGroup>
+                                            <Label>Email:</Label>
+                                            <Input
+                                                type="email"
+                                                name="email"
+                                                placeholder="Email"
+                                                value={this.state.email}
+                                                onChange={e => this.setState({ email: e.target.value })}
+                                            />
+                                        </FormGroup>
+                                        <FormGroup>
+                                            <Label>Password:</Label>
+                                            <Input
+                                                type="password"
+                                                name="password"
+                                                placeholder="Password"
+                                                value={this.state.password}
+                                                onChange={e => this.setState({ password: e.target.value })}
+                                            />
+                                        </FormGroup>
+                                        <FormGroup>
+                                            <Label>Phone Number:</Label>
+                                            <Input
+                                                type="text"
+                                                name="text"
+                                                placeholder="(407)324-9999"
+                                                value={this.state.phoneNumber}
+                                                onChange={e => this.setState({ phoneNumber: e.target.value })}
+                                            />
+                                        </FormGroup>
+                                        <Button type="submit" color="primary">Submit</Button>
+                                    </Form>
+                                </Container>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
-            </div>
+                {/* END MODAL */}
+                {/* add a modal once they want to add a bike */}
+            </div >
         );
     }
 }
