@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "lovedaddy",
+    "password": "",
     "database": "bike-repair",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "lovedaddy",
+    "password": "null",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
