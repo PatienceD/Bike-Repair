@@ -32,8 +32,13 @@ router.get("/api/clients/:name", function(req, res) {
 });
 
 //Charlotte is working on this//
-router.post('/new', function(req, res) {
-  db.sequelize.query('INSERT INTO User (firstName,lastName,phoneNumber,email,password) VALUES (firstName,lastName,phoneNumber,email,password')
+router.post('/api/new', function(req, res) {
+  db.User.create(req.body)
+  .then(function(user){
+    res.send(user);
+    console.log(user);
+  }).catch(function(err){
+    console.log(err);
+  })
 });
-
 module.exports = router;
