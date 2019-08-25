@@ -33,16 +33,12 @@ router.get("/api/clients/:name", function(req, res) {
 
 //Charlotte is working on this//
 router.post('/new', function(req, res) {
-  db.sequelize.query('INSERT INTO User (firstName,lastName,phoneNumber,email,password) VALUES (firstName,lastName,phoneNumber,email,password)', function(err) {
-    if(err){
-        return res.json(400, {response: {code: 400, message:'An error appeared.'}});
-    } else{
-       console.log('succes');
-       res.json(201, {response: {code: 201, message: 'Video has been added'}});
-    }   
-
-  });
-
-}
+  db.User.create(req.body)
+  .then(function(user){
+    res.send(user);
+    console.log(user);
+  }).catch(function(err){
+    console.log(err);
+  })
 });
 module.exports = router;

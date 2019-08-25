@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import 'bootstrap';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
+import API from './utils/API'
 
 
 class Modal extends React.Component {
@@ -20,7 +21,11 @@ class Modal extends React.Component {
 
     onFormSubmit(event) {
         event.preventDefault();
-        alert(JSON.stringify(this.state, null, '  '));
+        API.createUser(this.state).then(function(res){
+            console.log(res);
+        }).catch(function(err){
+            console.log(err);
+        })
         console.log(this.state);
     }
 
