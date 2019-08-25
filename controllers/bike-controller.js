@@ -32,7 +32,7 @@ router.get("/api/clients/:name", function(req, res) {
 });
 
 //Charlotte is working on this//
-router.post('/new', function(req, res) {
+router.post('/api/new', function(req, res) {
   db.User.create(req.body)
   .then(function(user){
     res.send(user);
