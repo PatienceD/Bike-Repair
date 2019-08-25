@@ -13,5 +13,8 @@ export default {
   // Saves an book to the database
   createUser: function(obj) {
     return axios.post("/api/new", obj);
+  },
+  createBike: function(obj){
+    return axios.post("/api/newBike",obj);
   }
 };

@@ -31,12 +31,23 @@ router.get("/api/clients/:name", function(req, res) {
   });
 });
 
-//Charlotte is working on this//
+
 router.post('/api/new', function(req, res) {
   db.User.create(req.body)
   .then(function(user){
     res.send(user);
     console.log(user);
+  }).catch(function(err){
+    console.log(err);
+  })
+});
+
+
+router.post('/api/newBike', function(req, res) {
+  db.Bikes.create(req.body)
+  .then(function(bike){
+    res.send(bike);
+    console.log(bike);
   }).catch(function(err){
     console.log(err);
   })
