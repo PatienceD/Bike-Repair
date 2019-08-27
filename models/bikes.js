@@ -10,9 +10,9 @@ module.exports = function(sequelize, DataTypes) {
     bikeType: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isIn: [["Mountain Bike", "Road Bike"]]
-      }
+      // validate: {
+      //   isIn: [["Mountain Bike", "Road Bike"]]
+      // }
     },
     lastWork: {
       type: DataTypes.DATEONLY,
