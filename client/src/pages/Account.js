@@ -30,6 +30,11 @@ class Account extends Component {
 
     onFormSubmit(event) {
         event.preventDefault();
+        API.createBike(this.state).then(function(res){
+            console.log(res);
+        }).catch(function(err){
+            console.log(err);
+        })
         // alert(JSON.stringify(this.state, null, '  '));
         console.log(this.state);
 
