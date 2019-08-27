@@ -12,25 +12,52 @@ import Calendly from "./pages/Appointments";
 import Account from "./pages/Account";
 import NoMatch from "./pages/NoMatch";
 import Footer from "./components/Footer";
+import { StateProvider } from './State';
 
-function App() {
+const App = () => {
+  const initialState = {
+    user: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      phoneNumber: ''
+    }
+  };
+
+  const reducer = (state, action) => {
+    console.log("reducer happened here");
+    switch (action.type) {
+      case 'currentUser':
+        return {
+          ...state,
+          user: action.LoggedinUser
+        };
+
+      default:
+        return state;
+    }
+  }
+
   return (
-    <div>
-      <div className="wrapper">
-        <Router>
-          <Navbar />
-          <Header />
-          <Switch>
-            <Route exact path="/" component={Calendly} />
-            <Route exact path="/appointments" component={Calendly} />
-            <Route exact path="/Clients" component={Clients} />
-            <Route exact path="/account" component={Account} />
-            <Route component={NoMatch} />
-          </Switch>
-        </Router>
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <div>
+        <div className="wrapper">
+          <Router>
+            <Navbar />
+            <Header />
+            <Switch>
+              <Route exact path="/" component={Calendly} />
+              <Route exact path="/appointments" component={Calendly} />
+              <Route exact path="/Clients" component={Clients} />
+              <Route exact path="/account" component={Account} />
+              <Route component={NoMatch} />
+            </Switch>
+          </Router>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </StateProvider>
   );
 }
 

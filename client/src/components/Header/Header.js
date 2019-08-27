@@ -1,13 +1,53 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Header.css";
-import Modal from "../../Modal";
+import { StateContext } from "../../State";
 
-function Header() {
-    return (
-        <div className="header">
-            <h2>Welcome </h2>
-        </div>
-    )
+class Header extends Component {
+    static contextType = StateContext;
+
+    componentDidMount() {
+        const [{ user }, dispatch] = this.context;
+        var fn = localStorage.getItem('firstName');
+        var ln = localStorage.getItem('lastName');
+        var em = localStorage.getItem('email');
+        var pw = localStorage.getItem('password');
+        var pn = localStorage.getItem('phoneNumber');
+
+        if (em === undefined) {
+            dispatch({
+                type: 'currentUser',
+                LoggedinUser: this.state = {
+                    firstName: this.state.firstName,
+                    lastName: this.state.lastName,
+                    email: this.state.email,
+                    password: this.state.password,
+                    phoneNumber: this.state.phoneNumber
+                }
+            });
+        } else {
+            dispatch({
+                type: 'currentUser',
+                LoggedinUser: this.state = {
+                    firstName: fn,
+                    lastName: ln,
+                    email: em,
+                    password: pw,
+                    phoneNumber: pn
+                }
+            });
+        }
+    }
+    render() {
+        const firstName = localStorage.getItem('firstName');
+        const lastName = localStorage.getItem('lastName');
+
+        return (
+            <div className="header">
+                <h2>Welcome {firstName + " " + lastName}</h2>
+            </div>
+        )
+
+    }
 }
 
 export default Header;
