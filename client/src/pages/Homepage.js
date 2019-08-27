@@ -2,11 +2,15 @@ import React from 'react';
 import $ from 'jquery';
 import 'bootstrap';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
-import API from './utils/API';
-import { StateContext } from "./State";
+import API from '../utils/API';
+import { Redirect } from 'react-router-dom';
+// import { StateContext } from "./State";
+
+var modalRedirect = false;
+
 
 class Modal extends React.Component {
-    static contextType = StateContext;
+    // static contextType = StateContext;
 
     constructor(props) {
         super(props);
@@ -35,27 +39,33 @@ class Modal extends React.Component {
         })
         console.log(this.state);
 
-        const { firstName, lastName, email, password, phoneNumber } = this.state;
-        localStorage.setItem('firstName', firstName);
-        localStorage.setItem('lastName', lastName);
-        localStorage.setItem('email', email);
-        localStorage.setItem('password', password);
-        localStorage.setItem('phoneNumber', phoneNumber);
+        // const {firstName, lastName, email, password, phoneNumber} = this.state;
+        localStorage.setItem('firstName', this.state.firstName);
+        localStorage.setItem('lastName', this.state.lastName);
+        localStorage.setItem('email', this.state.email);
+        localStorage.setItem('password', this.state.password);
+        localStorage.setItem('phoneNumber', this.state.phoneNumber);
 
-        const [{ user }, dispatch] = this.context;
+        modalRedirect = true;
 
-        dispatch({
-            type: 'currentUser',
-            LoggedinUser: this.state = {
-                firstName: this.state.firstName,
-                lastName: this.state.lastName,
-                email: this.state.email,
-                password: this.state.password,
-                phoneNumber: this.state.phoneNumber
-            }
-        });
+        // const [{user}, dispatch] = this.context;
+
+        // dispatch({
+        //     type: 'currentUser',
+        //     LoggedinUser: this.state = {
+        //         firstName: this.state.firstName,
+        //         lastName: this.state.lastName,
+        //         email: this.state.email,
+        //         password: this.state.password,
+        //         phoneNumber: this.state.phoneNumber
+        //     }
+        // });
 
         $('#myModal').modal('hide');
+
+        // if (true) {
+        //     return <Redirect to="/Appointments" />
+        // }
 
     }
 
@@ -67,48 +77,19 @@ class Modal extends React.Component {
 
     componentDidMount = () => {
         $(document).ready(function () {
-            if (em === ' ') {
-                $('#myModal').modal('show');
-                $('#login-modal').modal('hide');
-            }
+            $('#myModal').modal('show');
+            $('#login-modal').modal('hide');
         });
-
-        const [{ user }, dispatch] = this.context;
-
-        var fn = localStorage.getItem('firstName');
-        var ln = localStorage.getItem('lastName');
-        var em = localStorage.getItem('email');
-        var pw = localStorage.getItem('password');
-        var pn = localStorage.getItem('phoneNumber');
-
-        if (em === undefined) {
-            dispatch({
-                type: 'currentUser',
-                LoggedinUser: this.state = {
-                    firstName: this.state.firstName,
-                    lastName: this.state.lastName,
-                    email: this.state.email,
-                    password: this.state.password,
-                    phoneNumber: this.state.phoneNumber
-                }
-            });
-        } else {
-            dispatch({
-                type: 'currentUser',
-                LoggedinUser: this.state = {
-                    firstName: fn,
-                    lastName: ln,
-                    email: em,
-                    password: pw,
-                    phoneNumber: pn
-                }
-            });
-        }
-
 
     }
 
     render() {
+
+        if (modalRedirect) {
+            return <Redirect to="/Appointments" />
+        }
+
+
         return (
             <div>
                 <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"

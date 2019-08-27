@@ -10,6 +10,21 @@ class NavbarPage extends Component {
     this.setState({ isOpen: !this.state.isOpen });
   }
 
+  onClick = () => {
+    var con = window.confirm('Do you want to log out?');
+
+    if(con == true){
+      localStorage.setItem('firstName', ' ');
+      localStorage.setItem('lastName', ' ');
+      localStorage.setItem('email', ' ');
+      localStorage.setItem('password', ' ');
+      localStorage.setItem('phoneNumber', ' ');
+      return(
+       window.location.href ="/appointments"
+      )
+    }
+  }
+
   render() {
     return (
       <nav className="mb-1 navbar navbar-expand-lg navbar-dark blue lighten-1">
@@ -28,6 +43,9 @@ class NavbarPage extends Component {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="Account">Account Info</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" onClick={this.onClick}>Log Out</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/Clients">Client Search</a>
