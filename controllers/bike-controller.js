@@ -44,7 +44,7 @@ router.post('/api/new', function(req, res) {
 
 
 router.post('/api/newBike', function(req, res) {
-  db.Bikes.create(req.body)
+  db.Bike.create(req.body)
   .then(function(bike){
     res.send(bike);
     console.log(bike);
