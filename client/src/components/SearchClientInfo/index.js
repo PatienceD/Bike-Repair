@@ -6,9 +6,9 @@ function SearchableClients(props) {
             <th scope="row"></th>
             <td>{props.firstname}</td>
             <td>{props.lastname}</td>
-            <td>Information</td>
-            <td>{props.biketype}</td>
-            <td>{props.adult ? "Adult" : "Child"}</td>
+            <td>Client</td>
+            <td>{props.email}</td>
+            <td>{props.adult ? "Child" : "Adult"}</td>
         </tr>
     )
 }
