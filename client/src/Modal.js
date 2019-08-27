@@ -104,8 +104,6 @@ class Modal extends React.Component {
                 }
             });
         }
-
-
     }
 
     render() {
