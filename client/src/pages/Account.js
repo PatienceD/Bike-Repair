@@ -30,21 +30,21 @@ class Account extends Component {
 
     onFormSubmit(event) {
         event.preventDefault();
-        API.createBike(this.state).then(function(res){
+        API.createBike(this.state).then(function (res) {
             console.log(res);
-        }).catch(function(err){
+        }).catch(function (err) {
             console.log(err);
         })
         // alert(JSON.stringify(this.state, null, '  '));
         console.log(this.state);
 
-        const {firstName, lastName, email, password, phoneNumber} = this.state;
+        const { firstName, lastName, email, password, phoneNumber } = this.state;
         localStorage.setItem('firstName', firstName);
         localStorage.setItem('lastName', lastName);
         localStorage.setItem('email', email);
         localStorage.setItem('password', password);
         localStorage.setItem('phoneNumber', phoneNumber);
-        
+
         const [{ user }, dispatch] = this.context;
         var fn = localStorage.getItem('firstName');
         var ln = localStorage.getItem('lastName');
@@ -74,6 +74,7 @@ class Account extends Component {
         }
 
         $('#Acc-Modal').modal('hide');
+        $('.modal-backdrop').remove()
 
     }
 
@@ -85,6 +86,47 @@ class Account extends Component {
             console.log(err);
         })
         console.log(this.state);
+
+        const { bikeType, lastWork, adult, notes, email } = this.state;
+        localStorage.setItem('bikeType', bikeType);
+        localStorage.setItem('lastWork', lastWork);
+        localStorage.setItem('adult', adult);
+        localStorage.setItem('notes', notes);
+        localStorage.setItem('email', email);
+
+        const [{ user }, dispatch] = this.context;
+        var bt = localStorage.getItem('bikeType');
+        var lw = localStorage.getItem('lastWork');
+        var ad = localStorage.getItem('adult');
+        var no = localStorage.getItem('notes');
+        var em = localStorage.getItem('email');
+
+        if (em === undefined) {
+            dispatch({
+                type: 'currentUser',
+                LoggedinUser: this.state = {
+                    bikeType: this.state.bikeType,
+                    lastWork: this.state.lastWork,
+                    adult: this.state.adult,
+                    notes: this.state.notes
+                }
+            });
+        } else {
+            dispatch({
+                type: 'currentUser',
+                LoggedinUser: this.state = {
+                    bikeType: bt,
+                    lastWork: lw,
+                    adult: ad,
+                    notes: no
+                }
+            });
+        }
+
+        $('#AddaBikeModal').modal('hide');
+        $('.modal-backdrop').remove()
+
+
     }
 
     componentDidMount() {
@@ -132,7 +174,10 @@ class Account extends Component {
         const phoneNumber = localStorage.getItem('phoneNumber');
         const email = localStorage.getItem('email');
 
-
+        const bikeType = localStorage.getItem('bikeType');
+        const lastWork = localStorage.getItem('lastWork');
+        const adult = localStorage.getItem('adult');
+        const notes = localStorage.getItem('notes');
 
         return (
             <div className="container">
@@ -252,15 +297,15 @@ class Account extends Component {
                                         </div>
                                         <div className="col-md-7">
                                             <h5 className="card-title">Bike Information </h5>
-                                            <p className="card-text">Type of Bike: </p>
-                                            <p className="card-text">Last Worked on: </p>
-                                            <p className="card-text">Adult or kid Bike: </p>
-                                            <p className="card-text">Additional Notes: </p>
+                                            <p className="card-text">Type of Bike: {bikeType} </p>
+                                            <p className="card-text">Last Worked on: {lastWork} </p>
+                                            <p className="card-text">Adult or kid Bike: {adult} </p>
+                                            <p className="card-text">Additional Notes: {notes} </p>
 
                                             {/* <!-- Button trigger modal --> */}
                                             <button type="button" className="btn btn-blue" data-toggle="modal" data-target="#AddaBikeModal">
-                                                Edit Bike Info
-                                        </button>
+                                                Add Bike Info
+                                            </button>
 
                                             {/* <!-- Modal --> */}
                                             <div className="modal fade" id="AddaBikeModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -284,7 +329,7 @@ class Account extends Component {
                                                                 {/* <!--Body--> */}
                                                                 <div className="modal-body" style={{ padding: '.5px' }}>
                                                                     <Container className="p-5">
-                                                                        <Form onClick={this.onFormClick}>
+                                                                        <Form onSubmit={this.onFormClick}>
                                                                             <FormGroup>
                                                                                 <Label>Mountain or Road Bike?</Label>
                                                                                 <Input
@@ -325,7 +370,7 @@ class Account extends Component {
                                                                                     onChange={e => this.setState({ notes: e.target.value })}
                                                                                 />
                                                                             </FormGroup>
-                                                                            <FormGroup>
+                                                                            {/* <FormGroup>
                                                                                 <Label>Please Verify your Email</Label>
                                                                                 <Input
                                                                                     type="text"
@@ -334,7 +379,7 @@ class Account extends Component {
                                                                                     value={this.state.email}
                                                                                     onChange={e => this.setState({ email: e.target.value })}
                                                                                 />
-                                                                            </FormGroup>
+                                                                            </FormGroup> */}
                                                                             <Button type="submit" color="primary">Submit</Button>
                                                                         </Form>
                                                                     </Container>

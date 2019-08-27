@@ -64,7 +64,7 @@ class Calendly extends React.Component {
               <img src={Bike} style={{ height: '200px', width: '200px', border: '4px solid #9dc83e', boxShadow: '2px 2px 5px #000', margin: '7px' }}></img>
             </div>
             <div className="col-md-4">
-              <img src={Jimmy} style={{ height: '200px', width: '300px', border: '4px solid #9dc83e', boxShadow: '2px 2px 5px #000', margin: '7px' }}></img>
+              <img src={Jimmy} style={{ height: '200px', width: '320px', border: '4px solid #9dc83e', boxShadow: '2px 2px 5px #000', margin: '7px' }}></img>
             </div>
             <div className="col-md-4">
               <img src={Truck} style={{ height: '200px', width: '300px', border: '4px solid #9dc83e', boxShadow: '2px 2px 5px #000', margin: '7px' }}></img>
@@ -86,7 +86,7 @@ class Calendly extends React.Component {
           </div>
           <hr></hr><br></br><br></br>
           <div className="row">
-            <h2>Let's Schedule an Appointment!</h2>
+            <h2>Schedule an Appointment</h2>
           </div>
         </div>
 
