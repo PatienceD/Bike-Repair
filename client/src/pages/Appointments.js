@@ -72,8 +72,8 @@ class Calendly extends React.Component {
             <div className="col-md-1">
               <img src={Customer} style={{ height: '200px', width: '200px', border: '4px solid #9dc83e', boxShadow: '2px 2px 5px #000', margin: '7px' }}></img>
             </div>
-          </div><br></br><br></br><br></br>
-          <div className="row">
+          </div><br></br>
+          {/* <div className="row">
             <div className="col-md-2"></div>
             <div className='col-sm-4'>
               <a href="https://www.instagram.com/jimmyzmobile/" target="_blank" style={{ fontSize: '28px', color: 'black', fontWeight: 'bolder' }}><i class="fab fa-instagram"></i> Jimmy'z Instagram</a>
@@ -83,8 +83,9 @@ class Calendly extends React.Component {
               target="_blank" style={{ fontSize: '28px', color: 'black', fontWeight: 'bolder' }}><i class="fab fa-facebook-square"></i> Jimmy'z Facebook</a>
             </div>
             <div className="col-md-2"></div>
-          </div>
-          <hr></hr><br></br><br></br>
+          </div> */}
+          {/* <hr></hr><br></br><br></br> */}
+          <hr></hr>
           <div className="row">
             <h2>Schedule an Appointment</h2>
           </div>

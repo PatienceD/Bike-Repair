@@ -44,7 +44,7 @@ class Header extends Component {
         return (
             <div className="header">
                 <h2 style={{fontSize: '45px', fontWeight: 'bolder'}}>Welcome {firstName + " " + lastName}</h2>
-                <hr></hr><br></br>
+                <hr></hr>
             </div>
         )
 
