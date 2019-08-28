@@ -7,8 +7,8 @@ function SearchableClients(props) {
             <td>{props.firstname}</td>
             <td>{props.lastname}</td>
             <td>Client</td>
-            <td>{props.email}</td>
             <td>{props.adult ? "Child" : "Adult"}</td>
+            {/* <td>{props.email}</td> */}
         </tr>
     )
 }
