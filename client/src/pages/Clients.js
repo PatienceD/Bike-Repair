@@ -79,7 +79,7 @@ class Clients extends Component {
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Profile</th>
-                    <th>Bike Type</th>
+                    {/* <th>Bike Type</th> */}
                     <th>A / C</th>
                   </tr>
                 </thead>
@@ -90,8 +90,8 @@ class Clients extends Component {
                         key={client.id}
                         firstname={client.firstName}
                         lastname={client.lastName}
-                        biketype={client.bikeType}
                         adult={client.adult}
+                        // biketype={client.bikeType}
                       />
                     );
                   })}
