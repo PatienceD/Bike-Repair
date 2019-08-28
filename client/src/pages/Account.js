@@ -88,40 +88,65 @@ class Account extends Component {
         console.log(this.state);
 
         const { bikeType, lastWork, adult, notes, email } = this.state;
-        localStorage.setItem('bikeType', bikeType);
-        localStorage.setItem('lastWork', lastWork);
-        localStorage.setItem('adult', adult);
-        localStorage.setItem('notes', notes);
-        localStorage.setItem('email', email);
 
-        const [{ user }, dispatch] = this.context;
-        var bt = localStorage.getItem('bikeType');
-        var lw = localStorage.getItem('lastWork');
-        var ad = localStorage.getItem('adult');
-        var no = localStorage.getItem('notes');
-        var em = localStorage.getItem('email');
+        var incomplete = false;
 
-        if (em === undefined) {
-            dispatch({
-                type: 'currentUser',
-                LoggedinUser: this.state = {
-                    bikeType: this.state.bikeType,
-                    lastWork: this.state.lastWork,
-                    adult: this.state.adult,
-                    notes: this.state.notes
-                }
-            });
-        } else {
-            dispatch({
-                type: 'currentUser',
-                LoggedinUser: this.state = {
-                    bikeType: bt,
-                    lastWork: lw,
-                    adult: ad,
-                    notes: no
-                }
-            });
+        if (bikeType === '' || bikeType === undefined) {
+            alert("Please enter a proper bike type.");
+            incomplete = true;
+
+        // } else if (lastWork === '' || lastWork === undefined) {
+        //     alert("Please enter a proper last work date.");
+        //     incomplete = true;
+
+        } else if (adult === '' || adult === undefined) {
+            alert("Please enter a proper value for adult or child.");
+            incomplete = true;
+
+        // } else if (notes === '' || notes === undefined) {
+        //     alert("Please enter a proper note.");
+        //     incomplete = true;
+
         }
+
+        if (!incomplete) {
+
+            localStorage.setItem('bikeType', bikeType);
+            localStorage.setItem('lastWork', lastWork);
+            localStorage.setItem('adult', adult);
+            localStorage.setItem('notes', notes);
+            localStorage.setItem('email', email);
+
+            const [{ user }, dispatch] = this.context;
+            var bt = localStorage.getItem('bikeType');
+            var lw = localStorage.getItem('lastWork');
+            var ad = localStorage.getItem('adult');
+            var no = localStorage.getItem('notes');
+            var em = localStorage.getItem('email');
+
+            if (em === undefined) {
+                dispatch({
+                    type: 'currentUser',
+                    LoggedinUser: this.state = {
+                        bikeType: this.state.bikeType,
+                        lastWork: this.state.lastWork,
+                        adult: this.state.adult,
+                        notes: this.state.notes
+                    }
+                });
+            } else {
+                dispatch({
+                    type: 'currentUser',
+                    LoggedinUser: this.state = {
+                        bikeType: bt,
+                        lastWork: lw,   
+                        adult: ad,
+                        notes: no
+                    }
+                });
+            }
+        }
+
 
         $('#AddaBikeModal').modal('hide');
         $('.modal-backdrop').remove()

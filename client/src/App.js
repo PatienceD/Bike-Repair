@@ -13,6 +13,7 @@ import Account from "./pages/Account";
 import NoMatch from "./pages/NoMatch";
 import Footer from "./components/Footer";
 import { StateProvider } from './State';
+// import Devs from "./pages/Devs";
 
 const App = () => {
   const initialState = {
@@ -51,6 +52,7 @@ const App = () => {
               <Route exact path="/appointments" component={Calendly} />
               <Route exact path="/Clients" component={Clients} />
               <Route exact path="/account" component={Account} />
+              {/* <Route exact path="/devs" component={Devs} /> */}
               <Route component={NoMatch} />
             </Switch>
           </Router>
