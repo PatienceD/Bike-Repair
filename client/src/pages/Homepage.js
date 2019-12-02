@@ -84,12 +84,9 @@ class Modal extends React.Component {
     }
 
     render() {
-
         if (modalRedirect) {
             return <Redirect to="/Appointments" />
         }
-
-
         return (
             <div>
                 <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"

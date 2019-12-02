@@ -109,7 +109,7 @@ class Modal extends React.Component {
     render() {
         return (
             <div>
-                <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel"
                     aria-hidden="true" >
                     <div className="modal-dialog" role="document">
                         <div className="modal-body">
@@ -120,9 +120,9 @@ class Modal extends React.Component {
                                     <div className="modal-header info-color white-text">
                                         <h4 className="title">
                                             <i className="fa fa-pencil-alt"></i> Sign Up with us</h4>
-                                        <button type="button" className="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                                        {/* <button type="button" className="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">×</span>
-                                        </button>
+                                        </button> */}
                                     </div>
                                     <Container className="p-5">
                                         <Form onSubmit={this.onFormSubmit}>
@@ -182,9 +182,9 @@ class Modal extends React.Component {
                                     </Container>
                                 </div>
                             </div>
-                            <div className="modal-footer">
+                            {/* <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     {/* END MODAL */}
