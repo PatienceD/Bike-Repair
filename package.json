@@ -32,7 +32,7 @@
     "react-sticky-footer": "0.1.0-rc3",
     "reactstrap": "^8.0.1",
     "save": "^2.4.0",
-    "sequelize": "^5.13.1"
+    "sequelize": "^5.15.1"
   },
   "repository": {
     "type": "git",
